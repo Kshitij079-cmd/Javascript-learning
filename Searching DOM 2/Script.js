@@ -1,0 +1,7 @@
+let id1 = document.getElementById("id1")
+console.log(id1)
+console.log(id1.matches(".class"))
+console.log(id1.matches(".box"))
+let span1 = document.getElementById("span1")
+console.log(span1.closest("#span1"))
+console.log("printing span element", span1)

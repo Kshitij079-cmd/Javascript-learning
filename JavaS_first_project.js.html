@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript First Project</title>
+</head>
+<body>
+    <script>
+        const prompt = require('prompt-sync')();
+console.log("We are about to guess a number from 1 to 100");
+console.log("You are required to guess the number from 1 to 100 when the program asks you for the number");
+
+let NoToGuess = Math.floor(Math.random() * 100 + 1); // will choose a number automatically
+let Numberofguess = 0;
+let num;
+
+do {
+    num = prompt("Guess the number between 1-100: ");
+    num = parseInt(num);
+
+    if (num < NoToGuess) {
+        console.log("You think small");
+        console.log("TRY AGAIN!!!");
+        Numberofguess++;
+    } 
+    else if (num > NoToGuess) {
+        console.log("You are too high, think smaller");
+        console.log("TRY AGAIN!!!!!");
+        Numberofguess++;
+    } 
+    else if (num === NoToGuess) {
+        console.log("THAT'S CORRECT!!!! Congratulations ");
+        console.log("The Actual Number is:", NoToGuess);
+        break;
+    } 
+    else if(Numberofguess>=20){
+        console.log("You are failed")
+        console.log("The Actual Number is:", NoToGuess);
+        break;
+    }
+
+} while (num != NoToGuess);
+
+if (Numberofguess==1){
+    console.log("Great Mind!!!! I like it,", "No of guesses is/are:", Numberofguess )
+    
+}
+else if(Numberofguess<=10){
+    console.log("You are a great guesser", "No of guesses are: ", Numberofguess)
+}
+else if(Numberofguess>10 && Numberofguess<=20){
+    console.log("You are a average guesser,", "No of guesses are: ", Numberofguess)
+}
+else{
+    console.log("You are such a dumb!!!!! Read Sharp knowlegde books", Numberofguess)
+}
+
+console.log(`Your Score is ${100 - Numberofguess}`);
+
+    </script>
+</body>
+</html>

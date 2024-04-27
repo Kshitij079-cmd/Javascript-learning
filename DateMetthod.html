@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Methods</title>
+</head>
+<body>
+    <div class="clock">
+        console will show today's date
+    </div>
+    <script>
+        let today_Date = new Date();
+        console.log(`showing formated date ${today_Date}`);
+        console.log(`showing unformated date ${today_Date.toDateString()}`);
+        console.log(`showing Locale date ${today_Date.toLocaleDateString()}`);
+        console.log(`showing Locale time ${today_Date.toLocaleTimeString()}`);
+        console.log(`showing time ${today_Date.toTimeString()}`);
+        console.log(`showing Locale String ${today_Date.toLocaleString('default',{weekday:"long"})}`);
+        console.log(`ISO Methods ${today_Date.toISOString()}`);
+
+        const createdDate = new Date("04-25-2024")
+        console.log(`created date is: ${createdDate}`);
+        const Time = createdDate.getTime()
+        console.log(Time);
+        const currentData_timestamp = Date.now();
+        console.log(currentData_timestamp);
+        console.log(Math.floor((currentData_timestamp)/1000))
+        const aajkiDate = new Date()
+        console.log(aajkiDate.getMonth());
+
+
+    </script>
+
+</body>
+</html>

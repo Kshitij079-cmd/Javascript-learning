@@ -1,0 +1,12 @@
+let first = document.getElementById("first")
+let attribute = first.getAttribute("class")
+// console.log(attribute)
+// console.log(first.hasAttribute("class"))
+// console.log(first.hasAttribute("style"))
+// console.log(first.setAttribute("class", "true truth"))
+// console.log(first.removeAttribute("class"))
+// console.log(first.attributes)
+
+console.log(first.dataset)
+console.log(first.dataset.game)
+console.log(first.dataset.player)

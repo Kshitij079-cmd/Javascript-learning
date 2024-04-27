@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math and numbers</title>
+</head>
+<body>
+        const str = new String("this is a new string")
+<br>    console.log(str);
+<br>
+<br>    const Num = new Number(1195.896)
+<br>    console.log(Num);
+    <br>    by using toPrecise function, we are asking the program to focus on required values only <br>console.log(Num.toPrecision())
+<script>
+    const str = new String("this is a new string")
+    console.log(str);
+    const Num = new Number(195.896)
+    console.log(Num);
+    console.log("converting number into string ", Num.toString().length);
+    console.log("used for approaxmate/round of value", Num.toFixed(3))
+    console.log("Working on 2 digits",Num.toPrecision(2))
+    console.log("Working on 4 digits", Num.toPrecision(4))
+    /*Working on 2 digits 1.2e+3
+    Working on 4 digits 1196*/
+    const received_payment = 10000000
+    console.log("for UK value: ",received_payment.toLocaleString());
+    console.log("for Indians: ",received_payment.toLocaleString('en-IN'));
+    console.log(Math)
+    /**/
+    //output displays all Math methods
+    console.log(Math.acos(2))
+    console.log(Math.abs(4))
+    //output of above Math method: 4
+    console.log(Math.random())
+    //output of above Math method: 0.722392357966249
+    console.log(Math.random(5))
+    //output of above Math method: 0.7776939359336255
+    console.log(Math.ceil(4.5))
+    //output of above Math method: 5
+    console.log(Math.sqrt(225))
+
+   
+</script>
+</body>
+</html>

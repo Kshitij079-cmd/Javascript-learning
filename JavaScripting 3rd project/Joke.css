@@ -1,0 +1,13 @@
+html.body{
+    height: 100%;
+    width: 100%;
+}
+#Jokes{
+    background-color: rgb(227, 173, 235);
+    color: black;
+    font-size: 1.5em;
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 12px;
+    text-align: center;
+    width: 100%;
+}

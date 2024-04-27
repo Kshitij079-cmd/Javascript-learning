@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in JavaScript</title>
+</head>
+<body>
+    <script>
+        const newSymbol = Symbol("chai")
+        const newObjectDeclared = {
+            name : "Kshitij rajvanshi",
+            "work detailes": "Web developer",
+            age: 24,
+            email: "obejct@gmail.com",
+            loggedin: false,
+            [newSymbol]: "tea",
+            address: {
+                Nationality: "India",
+                State: "UttarPradesh",
+                district: "Greater Noida",
+                FurtherMore: "sector 62"
+            }
+        }
+        console.log(newObjectDeclared);
+        console.log("Showing name in object declared: ",newObjectDeclared.name);
+        console.log("Showing occupation: ",newObjectDeclared["work detailes"] );
+        console.log(newObjectDeclared.newSymbol);
+        console.log("type of ",typeof newObjectDeclared[newSymbol]);
+        //we can use Object.freesze to avoid unusual changes in any variable of object
+        newObjectDeclared.name = "Kshitij Rajvanshi";
+        console.log("Changed user name to:  ", newObjectDeclared.name);
+        // Object.freeze(newObjectDeclared)// we can't make any changes by doing this
+        // newObjectDeclared.name= "Anuj Rajvanshi"
+        // console.log("name has been changed to ", newObjectDeclared.name);
+
+        newObjectDeclared.greeting = function() {
+            console.log("Hello user");
+        }
+        newObjectDeclared.greeting2 = function() {
+            console.log(`the name in newOjjectDeclared: ${this.email}` );
+        }
+        console.log(newObjectDeclared.greeting());
+        console.log(newObjectDeclared.greeting2());
+        console.log(newObjectDeclared.address.Nationality);//nested objects
+        const target = { a: 1, b: 2 };
+        const source = { b: 4, c: 5 };
+        const returnedTarget = Object.assign({},target, source);
+        console.log(returnedTarget);
+
+        const person = {
+            isHuman: false,
+            printIntroduction: function () {
+                console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+            },
+        };
+        const me = Object.create(person);
+        me.name = 'Matthew'; // "name" is a property set on "me", but not on "person"
+        me.isHuman = true;
+        console.log(me);
+
+        //working with database
+        const user = [
+            {
+                id: 1,
+                email: "rajvanshikshitij@gmail.com"
+            },
+            {
+                // id: 1,
+                // email: "rajvanshikshitij@gmail.com"
+            },
+            {
+                // id: 1,
+                // email: "rajvanshikshitij@gmail.com"
+            },
+        ]
+        const arraykeys = Object.keys(newObjectDeclared);
+        console.log("converted all strings into arraysn ",arraykeys); 
+        console.log( Object.values(newObjectDeclared))
+        console.log( Object.entries(newObjectDeclared))
+        console.log( "Do we have coffee in our Object",newObjectDeclared.hasOwnProperty('coffee'))
+
+        // json API
+        /**
+         * {
+    "data": [
+        {
+            "type": "articles",
+            "id": "1",
+            "attributes": {
+                "title": "JSON:API paints my bikeshed!",
+                "body": "The shortest article. Ever.",
+                "created": "2015-05-22T14:56:29.000Z",
+                "updated": "2015-05-22T14:56:28.000Z"
+            },
+            "relationships": {
+                "author": {
+                    "data": {
+                        "id": "42",
+                        "type": "people"
+                    }
+                }
+            }
+        }
+    ],
+    "included": [
+        {
+            "type": "people",
+            "id": "42",
+            "attributes": {
+                "name": "John",
+                "age": 80,
+                "gender": "male"
+            }
+        }
+    ]
+}
+         **/
+    const course = {
+        coursename: "javascript",
+        price: "free",
+        courseLocation: "youtube",
+
+    }
+    const {price} = course;
+    const {coursename} = course;
+    const {courseLocation: sirKaaddress} = course;
+    console.log(`What are you learning?\n ${coursename}`);
+    console.log(`what is the price of JavaScript Course?\n ${price}`);
+    console.log(`what is the location?\n${sirKaaddress}`);
+</script>
+</body>
+</html>
