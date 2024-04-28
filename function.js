@@ -36,3 +36,15 @@ handleObject({//creation of object after function declaration
     username:"kshitij",
     FullName: "Kshitij Rajvanshi"
 })
+//this and arrow function
+
+const loginUser = {
+    username : "root",
+    password : "Hitman@007",
+    email : "rootUser@gmail.com",
+    Name :"Suraj",
+    displayMessage: function showMessage() {
+        console.log(`Hello ${username}, Welcome to our website`);
+    }
+}
+
